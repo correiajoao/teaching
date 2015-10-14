@@ -5,21 +5,21 @@
 #include <sys/wait.h> 
 
 
-//Função para o teste de consumo de ucp e memória
-void memoryucptest(){
+//Função para o teste de consumo de cpu e memória
+void memorycputest(){
 	for(;;){          
 		malloc(1024);
 	}
 }
 
-void ucptest(){
+void cputest(){
 	for(;;);
 } 
 
 int main (int argc, char *argv[]) {
 	
 	int i,pid,core;
-	float memory, ucp;
+	float memory, cpu;
 	char dataignored[50],commandline[50];
 	
 	pid = fork(); 
@@ -36,7 +36,7 @@ int main (int argc, char *argv[]) {
 		FILE *scanTerminal; // Ponteiro para a leitura do retorno dos comandos passados ao terminal
 		FILE *out; 			// Ponteiro para o arquivo de saida dos dados gerados
 				
-		if((strcmp(argv[1],"cpu") == 0)){ //Código de monitoramento do uso de UCP
+		if((strcmp(argv[1],"cpu") == 0)){ //Código de monitoramento do uso de CPU
 			
 			out = fopen("out.txt", "a");
 			fprintf(out, "%s","\n");
@@ -55,11 +55,11 @@ int main (int argc, char *argv[]) {
 				scanTerminal = popen(commandline,"r");
 				
 				//Lendo dados do retorno
-				fscanf(scanTerminal,"%s %f", dataignored, &ucp);
+				fscanf(scanTerminal,"%s %f", dataignored, &cpu);
 				
 				//Imprime os dados no terminal e no arquivo de saida
-				printf("UCP: %.2f%%\n", ucp/core);
-				fprintf(out, "UCP: %.2f%%\n", ucp/core);
+				printf("CPU: %.2f%%\n", cpu/core);
+				fprintf(out, "CPU: %.2f%%\n", cpu/core);
 				fclose(scanTerminal);
 				
 			}
@@ -81,7 +81,7 @@ int main (int argc, char *argv[]) {
 				printf("Time: %ds    ", i);
 				fprintf(out, "%s%d    ","Time: ",i);
 				
-				//Gerando linha de comando para monitoramento de UCP: ps -p [pid] -o %cpu
+				//Gerando linha de comando para monitoramento de CPU: ps -p [pid] -o %cpu
 				sprintf(commandline, "%s%d%s", "ps -p ", pid," -o %cpu"); 	
 				
 				//Abrindo o processo terminal com um pipe
@@ -89,10 +89,10 @@ int main (int argc, char *argv[]) {
 				scanTerminal = popen(commandline,"r");
 				
 				//Lendo dados do retorno
-				fscanf(scanTerminal,"%s %f", dataignored, &ucp);
+				fscanf(scanTerminal,"%s %f", dataignored, &cpu);
 				fclose(scanTerminal);
-				printf("UCP: %.2f%%    ", ucp/core);
-				fprintf(out,"UCP: %.2f%%    ", ucp/core);
+				printf("CPU: %.2f%%    ", cpu/core);
+				fprintf(out,"CPU: %.2f%%    ", cpu/core);
 				
 				//Gerando linha de comando para o monitoramento de memória: cat /proc/[pid]/status | grep 'VmSize'
 				sprintf(commandline,"%s%d%s","cat /proc/",pid,"/status | grep 'VmSize'");
@@ -117,9 +117,9 @@ int main (int argc, char *argv[]) {
 		
 		//Se for o processo filho ele analisa a entrada do argv[i] e executa o código correspontente  
 		if((strcmp(argv[1],"cpu") == 0)){	
-			ucptest();
+			cputest();
 		}else if((strcmp(argv[1],"cpu-mem") == 0)){
-			memoryucptest();
+			memorycputest();
 		}		
 	}
 	
