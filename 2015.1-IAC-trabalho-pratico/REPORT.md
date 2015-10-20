@@ -1,6 +1,6 @@
 # Identificação
 
-* Página do repositório do trabalho ([https://github.com/correiajoao/teaching/tree/master/2015.1-IAC-trabalho-pratico](TODO)) 
+* Página do repositório do trabalho ([https://github.com/correiajoao/teaching/tree/master/2015.1-IAC-trabalho-pratico]) 
 * Discente 1
 	* Nome: João Lucas Marques Correia
 	* Matrícula: 15111944 
