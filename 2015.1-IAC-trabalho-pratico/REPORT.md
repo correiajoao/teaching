@@ -40,7 +40,7 @@ No instante zero, o processo já foi criado, porém apresenta uma taxa de 0% de 
 Para o caso de teste de consumo simultâneo de UCP e memória foi executado o seguinte código no processo filho:
 ```c
 	for(;;){
-		malloc(sizeof(10000));*
+		malloc(sizeof(10000));
 	}
 ```
 O código mostrado acima, como no teste anterior, executa um *loop* infinito para a análise do consumo de UCP, além disso realiza a cada execução do *loop* a alocação de quatro bits, uma vez que é a quantidade de bits necessária para alocar o inteiro passado como parâmetro ao *sizeof*. O código foi executado em dois computadores distintos, e consequentemente, em dois ambientes computacionais distintos, e seus resultados para cada caso estão descritos nas seções abaixo.
