@@ -23,12 +23,11 @@ Para efetuar um estudo referente a esses mecanismos provenientes dos sistemas mu
 ###**Utilização intensa da UCP**###
 
 Para o caso de teste de utilização intensa da UCP, o seguinte código foi executado no processo filho:
-
-```
+```c
 	for(;;){
 	}
 ```
-Este trecho de código gera um consumo intenso de UCP, pois há a entrada em um *loop* infinito, não havendo ações que possam o colocar no estado de espera. Os dados obtidos a partir desse experimento estão representados a seguir na Figura 1. 
+Este trecho de código gera um consumo intenso de UCP, pois há a entrada em um *loop* infinito, não havendo ações que possam o colocar no estado de espera. Os dados obtidos a partir desse experimento estão representados a seguir. 
 
 ![Figura 1](https://raw.githubusercontent.com/correiajoao/teaching/master/2015.1-IAC-trabalho-pratico/chats/cpu.png)
 
@@ -39,7 +38,7 @@ No instante zero, o processo já foi criado, porém apresenta uma taxa de 0% de 
 
 
 Para o caso de teste de consumo simultâneo de UCP e memória foi executado o seguinte código no processo filho:
-```
+```c
 	for(;;){
 		malloc(sizeof(10000));*
 	}
@@ -49,7 +48,7 @@ O código mostrado acima, como no teste anterior, executa um *loop* infinito par
 
 - 	Ambiente sem memória SWAP
 
-Para o ambiente sem memória SWAP, os dados de execução obtidos foram os da Figura 2.
+Para o ambiente sem memória SWAP, os dados de execução obtidos foram os da figura a seguir.
 
 ![Figura 2](https://raw.githubusercontent.com/correiajoao/teaching/master/2015.1-IAC-trabalho-pratico/chats/cpu-memory.png)
 
@@ -58,7 +57,7 @@ Para esse ambiente, os dados obtidos no gráfico de consumo de UCP se mostraram 
 
 - 	Ambiente com memória SWAP
 
-No ambiente com memória SWAP, os dados de execução obtidos foram os da Figura 3.
+No ambiente com memória SWAP, os dados de execução obtidos foram os da figura abaixo.
 
 ![Figura 3](https://raw.githubusercontent.com/correiajoao/teaching/master/2015.1-IAC-trabalho-pratico/chats/cpu-memory-swap.png)
 
