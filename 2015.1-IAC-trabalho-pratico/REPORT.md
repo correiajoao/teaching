@@ -65,3 +65,8 @@ Para esse ambiente é possível notar que os dados de consumo de UCP variam sign
 
  Nesse tipo de teste, travamentos constantes na máquina que o executou ocorreram pois inúmeras trocas SWAP irão acontecer para liberação de espaço de alocação ao processo.
 
+###**Funcionalidades adicionais**###
+-	Comentários em inglês
+-	Documentação do código
+-	Gravação dos dados em arquivo 
+

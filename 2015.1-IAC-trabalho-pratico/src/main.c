@@ -88,9 +88,9 @@ int main (int argc, char *argv[]) {
 			//After 10 seconds the child is dead
 			//KILL(1) - Linux man page - http://linux.die.net/man/1/kill
 			kill(pid, SIGKILL);
-			//Close de outpu file
 			fclose(output);
-
+		
+			printf("Output file generated: output.txt\n");
 		}else if ((strcmp(argv[1],"cpu-mem") == 0)){
 			
 			output = fopen("output.txt", "a");
@@ -131,7 +131,7 @@ int main (int argc, char *argv[]) {
 				fprintf(output,"Memory: %.2f KB\n", memory);
 				fclose(scanTerminal);
 				
-			    //Waits one second
+			  	//Waits one second
 				sleep(1);
 			}
 			
@@ -139,7 +139,8 @@ int main (int argc, char *argv[]) {
 			//kill(1) - Linux man page - http://linux.die.net/man/1/kill
 			kill(pid, SIGKILL);
 			fclose(output);
-		
+			
+			printf("Output file generated: output.txt\n");
 		}	
 		
 	//If is the child process	
