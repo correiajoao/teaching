@@ -54,7 +54,7 @@ Observe que essa listagem não precisa necessariamente estar ordenada por data d
 
 O segundo parâmetro de entrada deve ser a política de escalonamento de tarefas:
 
-* ```fcfc``` FCFS (First Come, First Served)
+* ```fcfs``` FCFS (First Come, First Served)
 * ```rr``` Round-Robin com quantum = **2s**, com prioridade
 
 #### Exemplos de compilação e execução em C
@@ -214,9 +214,9 @@ A responsabilidade sobre a integridade do arquivo contendo trabalho é exclusiva
 ### Prazos
 
 
-O prazo de entrega sem atraso é o dia **20/10/15**.
+O prazo de entrega sem atraso é o dia **23/10/15**.
 
-Trabalhos entregues com atraso serão aceitos, no máximo, até o o dia **22/10/15**. Serão descontados 5% da nota obtida por dia de atraso.
+Trabalhos entregues com atraso serão aceitos, no máximo, até o o dia **25/10/15**. Serão descontados 5% da nota obtida por dia de atraso.
 
 
 ## Referências
