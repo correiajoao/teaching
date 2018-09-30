@@ -59,17 +59,7 @@ Para esse ambiente, os dados obtidos no gráfico de consumo de UCP se mostraram 
 
 No ambiente com memória SWAP, os dados de execução obtidos foram os da figura abaixo.
 
-<<<<<<< HEAD
 ![Figura 3](https://raw.githubusercontent.com/correiajoao/teaching/master/2015.1-IAC-trabalho-pratico/chats/cpu-memory-swap.png)
-=======
-* TODO: Em cada seção:
-	* explicar e discutir sobre o comportamento do programa para cada experimento;
-	* sempre referenciar o código fonte e o gráfico do experimento realizado;
-	* fazer dois gráficos do consumo recursos do processo filho em função do tempo:
-		* um gráfico para o consumo de memória em Kilobytes;
-		* um gráfico para o consumo da CPU em porcentagem.
-		* o eixo das abscissas deve representar o tempo medido a cada segundo e o eixo das coordenadas deve ser a métrica medida.
->>>>>>> e07960953952ccdef7d45b6fa2deb9332464e71a
 
 Para esse ambiente é possível notar que os dados de consumo de UCP variam significativamente durante o intervalo de tempo considerado, isso se deve ao fato de que após o processo alocar toda a memória física disponível, o sistema inicia o uso da memória destinada a SWAP, como consequência, o processo demora mais para realizar a alocação de memória, pois a cada solicitação de alocação é necessário que o sistema retire processos da memória e os transfira para o disco rígido, essa operação de transferência comparada às velocidades com que o processador trabalha é infinitamente maior e, assim, o processo acaba ficando por um longo tempo no estado de espera. Por esse motivo no instante três o processamento diminuí, porém a alocação de memória continua a crescer.
 
